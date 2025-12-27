@@ -1,0 +1,60 @@
+export const HOME_QUERY = `*[_type == "homePage"][0]{
+  seo{
+    title,
+    description,
+    keywords,
+    ogImage{
+      asset->{
+        url,
+        metadata{
+          dimensions{
+            width,
+            height
+          }
+        }
+      },
+      alt
+    }
+  },
+  hero{
+    title,
+    subtitle,
+    image{
+      asset->{
+        url,
+        metadata{
+          dimensions{
+            width,
+            height
+          }
+        }
+      },
+      alt
+    },
+    cta{
+      text,
+      href
+    }
+  }
+}`;
+
+export const SITE_SETTINGS_QUERY = `*[_type == "siteSettings"][0]{
+  title,
+  defaultSeo{
+    title,
+    description,
+    keywords,
+    ogImage{
+      asset->{
+        url,
+        metadata{
+          dimensions{
+            width,
+            height
+          }
+        }
+      },
+      alt
+    }
+  }
+}`;
